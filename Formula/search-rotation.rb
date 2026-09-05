@@ -5,8 +5,8 @@ class SearchRotation < Formula
 
   desc "MCP server for web search and page extraction across multiple providers"
   homepage "https://github.com/RobinBially/search-rotation"
-  url "https://github.com/RobinBially/search-rotation/releases/download/v0.4.4/search-rotation-0.4.4.tgz"
-  sha256 "34bd1e691e232b8f75a67ce265fb226c3b47a3dbdbfdf3f09bbb28b4e86c8b54"
+  url "https://github.com/RobinBially/search-rotation/releases/download/v0.4.5/search-rotation-0.4.5.tgz"
+  sha256 "fe4a9d66333827dc1c1dd0f33a2f751c8473cbeb6527ec65756c56fd02aa8450"
   license "MIT"
 
   depends_on "node@24"
