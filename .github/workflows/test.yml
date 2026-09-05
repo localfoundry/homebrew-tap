@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 20
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_AUTOREMOVE: 1
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_ANALYTICS: 1
     steps:
@@ -24,6 +25,8 @@ jobs:
       - name: Tap checked-out definitions
         run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
       - name: Check style and metadata
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           brew style localfoundry/tap/search-rotation
           brew audit --strict localfoundry/tap/search-rotation
@@ -37,6 +40,7 @@ jobs:
     timeout-minutes: 20
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_AUTOREMOVE: 1
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_ANALYTICS: 1
     steps:
@@ -46,6 +50,8 @@ jobs:
       - name: Tap checked-out definitions
         run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
       - name: Check cask style and public download
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           brew style localfoundry/tap/dotshelf
           brew audit --cask --strict --online localfoundry/tap/dotshelf
