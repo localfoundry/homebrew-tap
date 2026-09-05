@@ -1,4 +1,4 @@
-name: Homebrew formula
+name: Homebrew packages
 
 on:
   push:
@@ -31,3 +31,28 @@ jobs:
         run: |
           brew install localfoundry/tap/search-rotation
           brew test localfoundry/tap/search-rotation
+
+  dotshelf:
+    runs-on: macos-15
+    timeout-minutes: 20
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+      HOMEBREW_NO_ANALYTICS: 1
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Update Homebrew
+        run: brew update
+      - name: Tap checked-out definitions
+        run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
+      - name: Check cask style and public download
+        run: |
+          brew style localfoundry/tap/dotshelf
+          brew audit --cask --strict --online localfoundry/tap/dotshelf
+      - name: Install and verify notarized Universal app
+        run: |
+          brew install --cask localfoundry/tap/dotshelf
+          codesign --verify --deep --strict --verbose=2 /Applications/DotShelf.app
+          xcrun stapler validate /Applications/DotShelf.app
+          xcrun lipo /Applications/DotShelf.app/Contents/MacOS/KonfigEditor -verify_arch arm64
+          xcrun lipo /Applications/DotShelf.app/Contents/MacOS/KonfigEditor -verify_arch x86_64

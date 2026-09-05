@@ -4,6 +4,19 @@ Install tools by [Robin Bially](https://github.com/RobinBially) through Homebrew
 LocalFoundry is the distribution brand; source code, issues and releases stay on
 the developer's personal GitHub profile.
 
+## Install DotShelf
+
+A native Mac app for editing dotfiles and tool settings, with JSON validation,
+syntax highlighting and automatic backups. Requires macOS 14 or later.
+
+```sh
+brew install --cask localfoundry/tap/dotshelf
+```
+
+The Universal app supports Apple Silicon and Intel, is signed with Developer ID
+and notarized by Apple. [Screenshots and features](https://github.com/RobinBially/DotShelf)
+· [Installation details](docs/dotshelf.md)
+
 ## Install search-rotation
 
 ```sh
@@ -33,21 +46,23 @@ after an upgrade so it loads the new server version.
 
 | Package | Type | Source |
 |---|---|---|
+| `dotshelf` | Cask · Native macOS config editor | [RobinBially/DotShelf](https://github.com/RobinBially/DotShelf) |
 | `search-rotation` | Formula · Node.js MCP server | [RobinBially/search-rotation](https://github.com/RobinBially/search-rotation) |
-
-**DotShelf is not available through this tap yet.** Its source repository is
-currently private and a public notarized release is still required. No placeholder
-cask or unverified download is published. See [DotShelf release requirements](docs/dotshelf.md).
 
 ## Update or uninstall
 
 ```sh
 brew update
 brew upgrade search-rotation
+brew upgrade --cask dotshelf
+
+# Remove either tool:
 brew uninstall search-rotation
+brew uninstall --cask dotshelf
 ```
 
-Uninstalling the formula does not delete your provider keys, settings or history.
+Uninstalling search-rotation does not delete provider keys, settings or history.
+Uninstalling DotShelf removes the app; your configuration files, backups and app preferences are retained.
 
 ## Maintainers
 
@@ -55,8 +70,9 @@ Each formula or cask must reference an existing public release and its actual
 SHA-256 checksum. Validate changes with:
 
 ```sh
-brew style localfoundry/tap/search-rotation
+brew style localfoundry/tap/search-rotation localfoundry/tap/dotshelf
 brew audit --strict localfoundry/tap/search-rotation
+brew audit --cask --strict --online localfoundry/tap/dotshelf
 brew install localfoundry/tap/search-rotation
 brew test localfoundry/tap/search-rotation
 ```
