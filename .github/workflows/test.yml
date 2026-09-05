@@ -19,6 +19,8 @@ jobs:
       HOMEBREW_NO_ANALYTICS: 1
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Update Homebrew
+        run: brew update
       - name: Tap checked-out definitions
         run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
       - name: Check style and metadata
