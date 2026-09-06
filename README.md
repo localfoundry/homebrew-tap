@@ -17,6 +17,20 @@ The Universal app supports Apple Silicon and Intel, is signed with Developer ID
 and notarized by Apple. [Screenshots and features](https://github.com/RobinBially/DotShelf)
 · [Installation details](docs/dotshelf.md)
 
+## Install SMARTastic
+
+A native Mac app for checking SSD/HDD health and tracking daily write volume.
+Includes 7/30/90-day charts, SMART diagnostics and JSON reports. Requires macOS 14
+or later; Homebrew also installs smartmontools.
+
+```sh
+brew install --cask localfoundry/tap/smartastic
+```
+
+The Universal app supports Apple Silicon and Intel, is signed with Developer ID
+and notarized by Apple. [Screenshots and features](https://github.com/RobinBially/SMARTastic)
+· [Installation details](docs/smartastic.md)
+
 ## Install search-rotation
 
 ```sh
@@ -46,6 +60,7 @@ after an upgrade so it loads the new server version.
 
 | Package | Type | Source |
 |---|---|---|
+| `smartastic` | Cask · Native macOS drive health monitor | [RobinBially/SMARTastic](https://github.com/RobinBially/SMARTastic) |
 | `dotshelf` | Cask · Native macOS config editor | [RobinBially/DotShelf](https://github.com/RobinBially/DotShelf) |
 | `search-rotation` | Formula · Node.js MCP server | [RobinBially/search-rotation](https://github.com/RobinBially/search-rotation) |
 
