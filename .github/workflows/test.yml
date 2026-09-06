@@ -62,3 +62,35 @@ jobs:
           xcrun stapler validate /Applications/DotShelf.app
           xcrun lipo /Applications/DotShelf.app/Contents/MacOS/KonfigEditor -verify_arch arm64
           xcrun lipo /Applications/DotShelf.app/Contents/MacOS/KonfigEditor -verify_arch x86_64
+
+  smartastic:
+    runs-on: macos-15
+    timeout-minutes: 20
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_AUTOREMOVE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+      HOMEBREW_NO_ANALYTICS: 1
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Update Homebrew
+        run: brew update
+      - name: Tap checked-out definitions
+        run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
+      - name: Check cask style and public download
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+        run: |
+          brew style localfoundry/tap/smartastic
+          brew audit --cask --strict --online localfoundry/tap/smartastic
+      - name: Install and verify notarized Universal app
+        run: |
+          brew install --cask localfoundry/tap/smartastic
+          app=/Applications/SMARTastic.app
+          codesign --verify --deep --strict --verbose=2 "$app"
+          xcrun stapler validate "$app"
+          spctl --assess --type execute --verbose=4 "$app"
+          architectures="$(xcrun lipo -archs "$app/Contents/MacOS/SMARTastic")"
+          for arch in arm64 x86_64; do
+            [[ " $architectures " == *" $arch "* ]] || exit 1
+          done
