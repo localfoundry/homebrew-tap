@@ -5,8 +5,8 @@ class SearchRotation < Formula
 
   desc "MCP server for web search and page extraction across multiple providers"
   homepage "https://github.com/localfoundry/search-rotation-mcp"
-  url "https://github.com/localfoundry/search-rotation-mcp/releases/download/v0.4.9/search-rotation-0.4.9.tgz"
-  sha256 "453b4122a6008662f3bd20942caf9a8db4a503a60d38da686341dc8d0019d9f5"
+  url "https://github.com/localfoundry/search-rotation-mcp/releases/download/v0.4.10/search-rotation-0.4.10.tgz"
+  sha256 "80a91270897a32a6460473b34dce27e13b7bb8be494a80a5063fa8c4d3d35570"
   license "MIT"
 
   depends_on "node@24"
