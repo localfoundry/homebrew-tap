@@ -1,6 +1,6 @@
 # DotShelf
 
-[DotShelf](https://github.com/RobinBially/DotShelf) is a native editor for recurring
+[DotShelf](https://github.com/localfoundry/DotShelf) is a native editor for recurring
 configuration files on a Mac. Source code, issues and releases stay on Robin Bially's
 personal profile; LocalFoundry provides the Homebrew distribution.
 

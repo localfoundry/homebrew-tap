@@ -29,5 +29,5 @@ brew uninstall --cask smartastic
 
 Uninstall removes the app but retains preferences and local history.
 
-[Source, documentation and screenshots](https://github.com/RobinBially/SMARTastic)
-· [Releases](https://github.com/RobinBially/SMARTastic/releases)
+[Source, documentation and screenshots](https://github.com/localfoundry/SMARTastic)
+· [Releases](https://github.com/localfoundry/SMARTastic/releases)

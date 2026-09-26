@@ -1,8 +1,8 @@
 # LocalFoundry Homebrew Tap
 
-Install tools by [Robin Bially](https://github.com/RobinBially) through Homebrew.
-LocalFoundry is the distribution brand; source code, issues and releases stay on
-the developer's personal GitHub profile.
+Install tools by [Robin Bially](https://github.com/localfoundry) through Homebrew.
+LocalFoundry is the label for his open-source releases; source code, issues and
+release notes live in the same account.
 
 ## Install DotShelf
 
@@ -14,7 +14,7 @@ brew install --cask localfoundry/tap/dotshelf
 ```
 
 The Universal app supports Apple Silicon and Intel, is signed with Developer ID
-and notarized by Apple. [Screenshots and features](https://github.com/RobinBially/DotShelf)
+and notarized by Apple. [Screenshots and features](https://github.com/localfoundry/DotShelf)
 · [Installation details](docs/dotshelf.md)
 
 ## Install SMARTastic
@@ -28,7 +28,7 @@ brew install --cask localfoundry/tap/smartastic
 ```
 
 The Universal app supports Apple Silicon and Intel, is signed with Developer ID
-and notarized by Apple. [Screenshots and features](https://github.com/RobinBially/SMARTastic)
+and notarized by Apple. [Screenshots and features](https://github.com/localfoundry/SMARTastic)
 · [Installation details](docs/smartastic.md)
 
 ## Install search-rotation
@@ -60,9 +60,9 @@ after an upgrade so it loads the new server version.
 
 | Package | Type | Source |
 |---|---|---|
-| `smartastic` | Cask · Native macOS drive health monitor | [RobinBially/SMARTastic](https://github.com/RobinBially/SMARTastic) |
-| `dotshelf` | Cask · Native macOS config editor | [RobinBially/DotShelf](https://github.com/RobinBially/DotShelf) |
-| `search-rotation` | Formula · Node.js MCP server | [RobinBially/search-rotation](https://github.com/RobinBially/search-rotation) |
+| `smartastic` | Cask · Native macOS drive health monitor | [localfoundry/SMARTastic](https://github.com/localfoundry/SMARTastic) |
+| `dotshelf` | Cask · Native macOS config editor | [localfoundry/DotShelf](https://github.com/localfoundry/DotShelf) |
+| `search-rotation` | Formula · Node.js MCP server | [localfoundry/search-rotation-mcp](https://github.com/localfoundry/search-rotation-mcp) |
 
 ## Update or uninstall
 
