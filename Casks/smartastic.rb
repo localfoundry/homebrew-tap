@@ -1,6 +1,6 @@
 cask "smartastic" do
-  version "1.1.0"
-  sha256 "bb09d0a812a1be254678d988216fff566ada87e37cab8e3aa7a42f22cd58c406"
+  version "1.1.1"
+  sha256 "5132155f707610df2a80b3f15671d5e472fdca14dbbfdac355748eef12cfe49d"
 
   url "https://github.com/robin-bially/SMARTastic/releases/download/v#{version}/SMARTastic-#{version}.zip"
   name "SMARTastic"
