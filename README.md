@@ -1,8 +1,7 @@
-# LocalFoundry Homebrew Tap
+# Homebrew tap
 
-Install tools by [Robin Bially](https://github.com/localfoundry) through Homebrew.
-LocalFoundry is the label for his open-source releases; source code, issues and
-release notes live in the same account.
+Install tools by [Robin Bially](https://github.com/robin-bially) through Homebrew.
+Source code, issues and release notes live in the same account.
 
 ## Install DotShelf
 
@@ -10,11 +9,11 @@ A native Mac app for editing dotfiles and tool settings, with JSON validation,
 syntax highlighting and automatic backups. Requires macOS 14 or later.
 
 ```sh
-brew install --cask localfoundry/tap/dotshelf
+brew install --cask robin-bially/tap/dotshelf
 ```
 
 The Universal app supports Apple Silicon and Intel, is signed with Developer ID
-and notarized by Apple. [Screenshots and features](https://github.com/localfoundry/DotShelf)
+and notarized by Apple. [Screenshots and features](https://github.com/robin-bially/DotShelf)
 · [Installation details](docs/dotshelf.md)
 
 ## Install SMARTastic
@@ -24,17 +23,17 @@ Includes 7/30/90-day charts, SMART diagnostics and JSON reports. Requires macOS 
 or later; Homebrew also installs smartmontools.
 
 ```sh
-brew install --cask localfoundry/tap/smartastic
+brew install --cask robin-bially/tap/smartastic
 ```
 
 The Universal app supports Apple Silicon and Intel, is signed with Developer ID
-and notarized by Apple. [Screenshots and features](https://github.com/localfoundry/SMARTastic)
+and notarized by Apple. [Screenshots and features](https://github.com/robin-bially/SMARTastic)
 · [Installation details](docs/smartastic.md)
 
 ## Install search-rotation
 
 ```sh
-brew install localfoundry/tap/search-rotation
+brew install robin-bially/tap/search-rotation
 ```
 
 Homebrew installs Node.js 24 and the versioned release package. The executable is
@@ -60,9 +59,9 @@ after an upgrade so it loads the new server version.
 
 | Package | Type | Source |
 |---|---|---|
-| `smartastic` | Cask · Native macOS drive health monitor | [localfoundry/SMARTastic](https://github.com/localfoundry/SMARTastic) |
-| `dotshelf` | Cask · Native macOS config editor | [localfoundry/DotShelf](https://github.com/localfoundry/DotShelf) |
-| `search-rotation` | Formula · Node.js MCP server | [localfoundry/search-rotation-mcp](https://github.com/localfoundry/search-rotation-mcp) |
+| `smartastic` | Cask · Native macOS drive health monitor | [robin-bially/SMARTastic](https://github.com/robin-bially/SMARTastic) |
+| `dotshelf` | Cask · Native macOS config editor | [robin-bially/DotShelf](https://github.com/robin-bially/DotShelf) |
+| `search-rotation` | Formula · Node.js MCP server | [robin-bially/search-rotation-mcp](https://github.com/robin-bially/search-rotation-mcp) |
 
 ## Update or uninstall
 
@@ -85,11 +84,11 @@ Each formula or cask must reference an existing public release and its actual
 SHA-256 checksum. Validate changes with:
 
 ```sh
-brew style localfoundry/tap/search-rotation localfoundry/tap/dotshelf
-brew audit --strict localfoundry/tap/search-rotation
-brew audit --cask --strict --online localfoundry/tap/dotshelf
-brew install localfoundry/tap/search-rotation
-brew test localfoundry/tap/search-rotation
+brew style robin-bially/tap/search-rotation robin-bially/tap/dotshelf
+brew audit --strict robin-bially/tap/search-rotation
+brew audit --cask --strict --online robin-bially/tap/dotshelf
+brew install robin-bially/tap/search-rotation
+brew test robin-bially/tap/search-rotation
 ```
 
 The formula uses the prebuilt release archive and disables npm lifecycle scripts.

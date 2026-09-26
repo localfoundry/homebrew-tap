@@ -23,17 +23,17 @@ jobs:
       - name: Update Homebrew
         run: brew update
       - name: Tap checked-out definitions
-        run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
+        run: brew tap --custom-remote robin-bially/tap "$GITHUB_WORKSPACE"
       - name: Check style and metadata
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
-          brew style localfoundry/tap/search-rotation
-          brew audit --strict localfoundry/tap/search-rotation
+          brew style robin-bially/tap/search-rotation
+          brew audit --strict robin-bially/tap/search-rotation
       - name: Install and test MCP server
         run: |
-          brew install localfoundry/tap/search-rotation
-          brew test localfoundry/tap/search-rotation
+          brew install robin-bially/tap/search-rotation
+          brew test robin-bially/tap/search-rotation
 
   dotshelf:
     runs-on: macos-15
@@ -48,16 +48,16 @@ jobs:
       - name: Update Homebrew
         run: brew update
       - name: Tap checked-out definitions
-        run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
+        run: brew tap --custom-remote robin-bially/tap "$GITHUB_WORKSPACE"
       - name: Check cask style and public download
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
-          brew style localfoundry/tap/dotshelf
-          brew audit --cask --strict --online localfoundry/tap/dotshelf
+          brew style robin-bially/tap/dotshelf
+          brew audit --cask --strict --online robin-bially/tap/dotshelf
       - name: Install and verify notarized Universal app
         run: |
-          brew install --cask localfoundry/tap/dotshelf
+          brew install --cask robin-bially/tap/dotshelf
           codesign --verify --deep --strict --verbose=2 /Applications/DotShelf.app
           xcrun stapler validate /Applications/DotShelf.app
           xcrun lipo /Applications/DotShelf.app/Contents/MacOS/KonfigEditor -verify_arch arm64
@@ -76,16 +76,16 @@ jobs:
       - name: Update Homebrew
         run: brew update
       - name: Tap checked-out definitions
-        run: brew tap --custom-remote localfoundry/tap "$GITHUB_WORKSPACE"
+        run: brew tap --custom-remote robin-bially/tap "$GITHUB_WORKSPACE"
       - name: Check cask style and public download
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
-          brew style localfoundry/tap/smartastic
-          brew audit --cask --strict --online localfoundry/tap/smartastic
+          brew style robin-bially/tap/smartastic
+          brew audit --cask --strict --online robin-bially/tap/smartastic
       - name: Install and verify notarized Universal app
         run: |
-          brew install --cask localfoundry/tap/smartastic
+          brew install --cask robin-bially/tap/smartastic
           app=/Applications/SMARTastic.app
           codesign --verify --deep --strict --verbose=2 "$app"
           xcrun stapler validate "$app"

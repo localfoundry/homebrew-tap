@@ -4,8 +4,8 @@ class SearchRotation < Formula
   include Language::Node::Shebang
 
   desc "MCP server for web search and page extraction across multiple providers"
-  homepage "https://github.com/localfoundry/search-rotation-mcp"
-  url "https://github.com/localfoundry/search-rotation-mcp/releases/download/v0.4.10/search-rotation-0.4.10.tgz"
+  homepage "https://github.com/robin-bially/search-rotation-mcp"
+  url "https://github.com/robin-bially/search-rotation-mcp/releases/download/v0.4.10/search-rotation-0.4.10.tgz"
   sha256 "80a91270897a32a6460473b34dce27e13b7bb8be494a80a5063fa8c4d3d35570"
   license "MIT"
 

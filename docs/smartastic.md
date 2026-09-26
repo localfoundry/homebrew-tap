@@ -1,7 +1,7 @@
 # SMARTastic
 
 ```sh
-brew install --cask localfoundry/tap/smartastic
+brew install --cask robin-bially/tap/smartastic
 open /Applications/SMARTastic.app
 ```
 
@@ -29,5 +29,5 @@ brew uninstall --cask smartastic
 
 Uninstall removes the app but retains preferences and local history.
 
-[Source, documentation and screenshots](https://github.com/localfoundry/SMARTastic)
-· [Releases](https://github.com/localfoundry/SMARTastic/releases)
+[Source, documentation and screenshots](https://github.com/robin-bially/SMARTastic)
+· [Releases](https://github.com/robin-bially/SMARTastic/releases)

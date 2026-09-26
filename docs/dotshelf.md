@@ -1,13 +1,13 @@
 # DotShelf
 
-[DotShelf](https://github.com/localfoundry/DotShelf) is a native editor for recurring
+[DotShelf](https://github.com/robin-bially/DotShelf) is a native editor for recurring
 configuration files on a Mac. Source code, issues and releases stay on Robin Bially's
-personal profile; LocalFoundry provides the Homebrew distribution.
+personal profile; the Homebrew tap in the same account provides distribution.
 
 ## Install
 
 ```sh
-brew install --cask localfoundry/tap/dotshelf
+brew install --cask robin-bially/tap/dotshelf
 ```
 
 Requires macOS 14 Sonoma or later. The Universal app supports Apple Silicon and Intel.
@@ -35,9 +35,9 @@ staples the accepted ticket, verifies it and generates `Casks/dotshelf.rb` from
 the final ZIP. Publish that verified release before updating this tap.
 
 ```sh
-brew style localfoundry/tap/dotshelf
-brew audit --cask --strict --online localfoundry/tap/dotshelf
-brew install --cask localfoundry/tap/dotshelf
+brew style robin-bially/tap/dotshelf
+brew audit --cask --strict --online robin-bially/tap/dotshelf
+brew install --cask robin-bially/tap/dotshelf
 ```
 
 Never use a placeholder checksum or point the cask at an unpublished draft.
