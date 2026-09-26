@@ -1,6 +1,6 @@
 cask "dotshelf" do
-  version "0.1.0"
-  sha256 "3f770c0e92971008233447f6dc5a7931873c68180a9f2feb84827ac470fe257f"
+  version "0.2.0"
+  sha256 "1a63a2ce487a81f50d352690a5e6a29f4c45abcf26d9dd4de320ba2a8da5440c"
 
   url "https://github.com/robin-bially/DotShelf/releases/download/v#{version}/DotShelf-#{version}.zip"
   name "DotShelf"
