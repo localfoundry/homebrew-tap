@@ -36,7 +36,8 @@ class SearchRotation < Formula
       server.flush
       assert server.wait_readable(30), "MCP tool listing timed out"
       tools = JSON.parse(server.readline).dig("result", "tools")
-      assert_equal %w[engine_status fetch_url open_dashboard web_search], tools.map { |tool| tool.fetch("name") }.sort
+      assert_equal %w[fetch_url get_engine_status open_dashboard search_web update_engine_config],
+                   tools.map { |tool| tool.fetch("name") }.sort
     ensure
       server.close_write unless server.closed?
     end
